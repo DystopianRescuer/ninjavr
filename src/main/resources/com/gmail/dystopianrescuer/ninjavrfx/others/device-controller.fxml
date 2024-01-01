@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eu.hansolo.medusa.Gauge?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="473.0" prefWidth="913.0" style="-fx-background-color: #3c3c3c;"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gmail.dystopianrescuer.ninjavrfx.controllers.modulesControllers.renta.DeviceController">
+    <children>
+        <HBox layoutX="38.0" layoutY="34.0">
+            <children>
+                <AnchorPane prefHeight="81.0" prefWidth="813.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                        <ToggleButton fx:id="freeMode" layoutX="447.0" layoutY="29.0" mnemonicParsing="false"
+                                      onAction="#onButtonAction" text="Modo libre"/>
+                        <Button fx:id="closeApp" layoutX="525.0" layoutY="29.0" mnemonicParsing="false"
+                                onAction="#onButtonAction" text="Quitar Aplicación actual"/>
+                        <Button fx:id="restart" layoutX="670.0" layoutY="29.0" mnemonicParsing="false"
+                                onAction="#onButtonAction" text="Reiniciar"/>
+                        <Button fx:id="turnOff" layoutX="734.0" layoutY="29.0" mnemonicParsing="false"
+                                onAction="#onButtonAction" text="Apagar"/>
+                        <Button fx:id="transmissionButton" layoutX="363.0" layoutY="29.0" mnemonicParsing="false"
+                                onAction="#onButtonAction" text="Transmisión"/>
+                        <Gauge fx:id="batteryProgress" animated="true" checkAreasForValue="true" decimals="0"
+                               layoutX="15.0" layoutY="17.0" lcdFont="STANDARD" prefHeight="52.0" prefWidth="81.0"
+                               skinType="BATTERY">
+                            <zeroColor>
+                                <Color red="1.0"/>
+                            </zeroColor>
+                        </Gauge>
+                        <ImageView fx:id="usbIndicator" fitHeight="26.0" fitWidth="26.0" layoutX="98.0" layoutY="31.0"
+                                   opacity="0.15" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../../img/usb_connected.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="acIndicator" fitHeight="26.0" fitWidth="26.0" layoutX="128.0" layoutY="32.0"
+                                   opacity="0.15" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../../img/power-ac.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+        <HBox layoutX="38.0" layoutY="149.0" prefHeight="283.0" prefWidth="811.0"
+              style="-fx-background-color: #ffffff;">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="283.0" prefWidth="223.0" spacing="15.0"
+                      style="-fx-background-color: #FFF7CF;">
+                    <children>
+                        <Label text="INFORMACIÓN">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" text="Pantalla">
+                            <graphic>
+                                <Label fx:id="screenLabel" text="???">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" text="Aplicación actual">
+                            <graphic>
+                                <Label fx:id="currentAppLabel" text="???">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" text="Transmisión a pantalla">
+                            <graphic>
+                                <Label fx:id="transmissionWorking" text="???">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" text="Ultima renta">
+                            <graphic>
+                                <Label fx:id="last" text="???">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets top="30.0"/>
+                    </padding>
+                </VBox>
+                <AnchorPane>
+                    <children>
+                        <AnchorPane fx:id="gestorPagoTarjeta" prefHeight="283.0" prefWidth="589.0"
+                                    style="-fx-background-color: #FFFFFF;">
+                            <children>
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0"
+                                           stroke="#0000001c" strokeType="INSIDE" width="589.0"/>
+                                <Circle fill="WHITE" layoutX="304.0" layoutY="100.0" radius="50.0" stroke="#00000071"
+                                        strokeType="INSIDE"/>
+                                <Button layoutX="217.0" layoutY="246.0" mnemonicParsing="false"
+                                        style="-fx-background-radius: 15px; -fx-background-color: #fd0000;"
+                                        text="CANCELAR TRANSACCIÓN" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Button>
+                                <Label contentDisplay="BOTTOM" layoutX="216.0" layoutY="154.0" prefHeight="26.0"
+                                       prefWidth="187.0" text="Esperando pago...">
+                                    <font>
+                                        <Font name="Yu Gothic Bold" size="20.0"/>
+                                    </font>
+                                </Label>
+                                <ProgressIndicator layoutX="278.0" layoutY="74.0" prefHeight="73.0" prefWidth="75.0"/>
+                                <Label contentDisplay="RIGHT" layoutX="198.0" layoutY="189.0" prefHeight="17.0"
+                                       prefWidth="253.0" text="Transacción: ">
+                                    <graphic>
+                                        <Label text="????"/>
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="235.0" layoutY="215.0" prefHeight="17.0"
+                                       prefWidth="119.0" text="Monto: ">
+                                    <graphic>
+                                        <Label text="????"/>
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="BOTTOM" layoutX="11.0" layoutY="12.0" prefHeight="26.0"
+                                       prefWidth="213.0" text="PAGO CON TARJETA" textFill="WHITE">
+                                    <font>
+                                        <Font name="Yu Gothic Bold" size="20.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="gestorRenta" prefHeight="283.0" prefWidth="589.0"
+                                    style="-fx-background-color: #FFFFFF;">
+                            <children>
+                                <Label layoutX="238.0" layoutY="22.0" text="GESTIÓN DE RENTA">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <ListView fx:id="gameList" layoutX="38.0" layoutY="57.0" prefHeight="200.0"
+                                          prefWidth="200.0"/>
+                                <Gauge fx:id="temporizador" animated="true" decimals="0" layoutX="327.0" layoutY="113.0"
+                                       maxValue="40.0" prefHeight="131.0" prefWidth="200.0" skinType="FLAT"
+                                       title="Time left" unit="MINUTOS">
+                                    <barColor>
+                                        <Color green="0.5614035129547119" blue="0.06549707800149918"/>
+                                    </barColor>
+                                </Gauge>
+                                <Button layoutX="398.0" layoutY="64.0" mnemonicParsing="false" onAction="#onRentaAction"
+                                        text="Pausar"/>
+                                <Button layoutX="327.0" layoutY="63.0" mnemonicParsing="false" onAction="#onRentaAction"
+                                        text="Reanudar"/>
+                                <Button layoutX="453.0" layoutY="64.0" mnemonicParsing="false" onAction="#onRentaAction"
+                                        text="Cerrar renta"/>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="iniciarRenta" prefHeight="283.0" prefWidth="589.0"
+                                    style="-fx-background-color: #FFFFFF;">
+                            <children>
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00abff" height="208.0" layoutX="90.0"
+                                           layoutY="55.0" stroke="BLACK" strokeType="INSIDE" width="426.0"/>
+                                <Label layoutX="179.0" layoutY="108.0" text="Tipo de pago">
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                </Label>
+                                <RadioButton fx:id="pagoEfectivo" layoutX="127.0" layoutY="128.0"
+                                             mnemonicParsing="false" onAction="#tipoPagoAction" prefHeight="22.0"
+                                             prefWidth="99.0" text="Pago efectivo">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="pago"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="pagoTarjeta" layoutX="231.0" layoutY="128.0" mnemonicParsing="false"
+                                             onAction="#tipoPagoAction" prefHeight="22.0" prefWidth="91.0"
+                                             text="Pago tarjeta" toggleGroup="$pago"/>
+                                <RadioButton fx:id="pagoNinja" disable="true" layoutX="170.0" layoutY="156.0"
+                                             mnemonicParsing="false" onAction="#tipoPagoAction" prefHeight="17.0"
+                                             prefWidth="107.0" text="Ninja Card" toggleGroup="$pago"/>
+                                <Label fx:id="tieneNinjaCard" layoutX="123.0" layoutY="186.0"
+                                       text="¿Cuenta con membresía Ninja Card?">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <RadioButton fx:id="ninjaCardNo" layoutX="236.0" layoutY="206.0" mnemonicParsing="false"
+                                             prefHeight="22.0" prefWidth="51.0" selected="true" text="No">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="membresia"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="ninjaCardYes" layoutX="145.0" layoutY="206.0"
+                                             mnemonicParsing="false" prefHeight="22.0" prefWidth="51.0" text="Sí"
+                                             toggleGroup="$membresia"/>
+                                <Label fx:id="ofrecerNinjaCard" layoutX="186.0" layoutY="234.0" text="¡Ofrécela!"/>
+                                <Label contentDisplay="BOTTOM" layoutX="390.0" layoutY="130.0" text="Total">
+                                    <font>
+                                        <Font name="Agency FB" size="20.0"/>
+                                    </font>
+                                    <graphic>
+                                        <Label fx:id="total" text="0.00 MXN">
+                                            <font>
+                                                <Font name="Agency FB" size="20.0"/>
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </Label>
+                                <Button fx:id="confirmTransaction" layoutX="358.0" layoutY="205.0"
+                                        mnemonicParsing="false" onAction="#onTransaction" text="Confirmar transacción"/>
+                                <Label layoutX="166.0" layoutY="71.0" text="minutos">
+                                    <graphic>
+                                        <ChoiceBox fx:id="minutes" onAction="#updateTotal" prefHeight="25.0"
+                                                   prefWidth="59.0"/>
+                                    </graphic>
+                                </Label>
+                                <Label layoutX="259.0" layoutY="30.0" text="INICIAR RENTA">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+        <Label layoutX="273.0" layoutY="445.0" text="Sonríe y recuerda ser amable con el cliente :)" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="17.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

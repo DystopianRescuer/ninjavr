@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1050.0"
+            style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gmail.dystopianrescuer.ninjavrfx.controllers.DashboardController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="649.0" prefWidth="300.0" spacing="10.0"
+              style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="117.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../img/logo.png"/>
+                    </image>
+                </ImageView>
+                <VBox alignment="TOP_CENTER">
+                    <children>
+                        <ImageView fitHeight="90.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/user.png"/>
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="158.0"
+                               text="Atendiendo:" textFill="#6e6363">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="empleadoLabel" alignment="CENTER" contentDisplay="TOP" prefHeight="36.0"
+                               prefWidth="241.0" text="???" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="25.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <Button fx:id="principalButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false"
+                        onAction="#handleClick" prefHeight="63.0" prefWidth="237.0" stylesheets="@style.css"
+                        text="Principal" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/icons8_Home_32px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="rentaButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false"
+                        onAction="#handleClick" prefHeight="63.0" prefWidth="237.0" stylesheets="@style.css"
+                        text="Renta" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/icon_glasses.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="ninjaCardButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false"
+                        onAction="#handleClick" prefHeight="63.0" prefWidth="237.0" stylesheets="@style.css"
+                        text="Ninja Card" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/ninjapro.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="ventasButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false"
+                        onAction="#handleClick" prefHeight="63.0" prefWidth="237.0" stylesheets="@style.css"
+                        text="Ventas" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/icons8_Search_52px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="gestionButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false"
+                        onAction="#handleClick" prefHeight="63.0" prefWidth="237.0" stylesheets="@style.css"
+                        text="Gestión" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/icons8_Slider__32px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="cerrarButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false"
+                        onAction="#handleClick" prefHeight="63.0" prefWidth="237.0" stylesheets="@style.css"
+                        text="Cerrar" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../img/icons8_Sign_Out_32px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+        <Pane fx:id="principal" layoutX="300.0" layoutY="6.0" prefHeight="643.0" prefWidth="750.0"/>
+        <Pane fx:id="renta" layoutX="300.0" layoutY="6.0" prefHeight="643.0" prefWidth="750.0"/>
+        <Pane fx:id="ninjaCard" layoutX="300.0" layoutY="6.0" prefHeight="643.0" prefWidth="750.0"/>
+        <Pane fx:id="ventas" layoutX="300.0" layoutY="6.0" prefHeight="643.0" prefWidth="750.0"/>
+        <Pane fx:id="gestion" layoutX="310.0" layoutY="16.0" prefHeight="643.0" prefWidth="750.0"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="638.0" prefWidth="994.0" style="-fx-background-color: #02030A;"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox prefHeight="638.0" prefWidth="969.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="600.0">
+                    <children>
+                        <Label prefHeight="32.0" prefWidth="305.0" text="Panel de gestión de Ninja Card"
+                               textFill="WHITE">
+                            <font>
+                                <Font name="Gill Sans MT" size="23.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" top="15.0"/>
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="543.0" prefWidth="1057.0">
+                    <VBox.margin>
+                        <Insets left="20.0" top="20.0"/>
+                    </VBox.margin>
+                    <children>
+                        <TabPane fx:id="devicesTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                 minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="913.0"
+                                 stylesheets="@../tabstyle2.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0">
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT"/>
+                            </cursor>
+                            <tabs>
+                                <Tab text="Consultar tarjeta">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+                                                    style="-fx-background-color: #05071F;">
+                                            <children>
+                                                <Label contentDisplay="BOTTOM" layoutX="63.0" layoutY="86.0"
+                                                       prefHeight="58.0" prefWidth="237.0" text="Nombre "
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TextField fx:id="nombre" alignment="CENTER" editable="false"
+                                                                   prefHeight="32.0" prefWidth="239.0"/>
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="BOTTOM" layoutX="116.0" layoutY="272.0"
+                                                       prefHeight="58.0" prefWidth="132.0" text="NinjaPoints acumulados"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TextField alignment="CENTER" prefHeight="32.0"
+                                                                   prefWidth="125.0"/>
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="BOTTOM" layoutX="69.0" layoutY="181.0"
+                                                       prefHeight="60.0" prefWidth="226.0" text="Fecha de registro"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TextField alignment="CENTER" editable="false" prefHeight="32.0"
+                                                                   prefWidth="228.0"/>
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="BOTTOM" layoutX="383.0" layoutY="67.0"
+                                                       prefHeight="353.0" prefWidth="496.0" text="Ultimas transacciones"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TableView prefHeight="312.0" prefWidth="494.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="129.33334350585938"
+                                                                             text="Fecha"/>
+                                                                <TableColumn minWidth="0.0"
+                                                                             prefWidth="185.33331298828125"
+                                                                             text="Tipo"/>
+                                                                <TableColumn minWidth="3.33331298828125"
+                                                                             prefWidth="178.66668701171875"
+                                                                             text="Puntos"/>
+                                                            </columns>
+                                                        </TableView>
+                                                    </graphic>
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0"/>
+                                                    </font>
+                                                </Label>
+                                                <Button layoutX="32.0" layoutY="379.0" mnemonicParsing="false"
+                                                        text="Actualizar minutos"/>
+                                                <Button layoutX="196.0" layoutY="379.0" mnemonicParsing="false"
+                                                        text="Eliminar Ninja Card"/>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Nueva tarjeta">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="913.0"
+                                                    style="-fx-background-color: #05071F;">
+                                            <children>
+                                                <Label layoutX="364.0" layoutY="29.0" text="REGISTRO DE USUARIOS"
+                                                       textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextField layoutX="184.0" layoutY="91.0" prefHeight="32.0"
+                                                           prefWidth="443.0"/>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </FlowPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

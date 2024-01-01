@@ -1,0 +1,80 @@
+.button {
+    -fx-background-color: #05071F;
+    -fx-text-fill: #e7e5e5;
+}
+
+.button:hover {
+    -fx-background-color: #10165F;
+}
+
+.button:pressed {
+    -fx-background-color: #1620A1;
+}
+
+.scroll-pane {
+    -fx-background-color: #02030A;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #10165F;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: black;
+}
+
+
+/*TablPane styling*/
+.tab {
+    -fx-background-color: -fx-primary;
+}
+
+.tab-header-background {
+    -fx-background-color: -fx-primary;
+}
+
+.tab-label {
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 10pt;
+}
+
+
+.tab-main {
+    -fx-pref-height: 60;
+    -fx-max-height: 60;
+}
+
+.settings-tab {
+    -fx-background-color: derive(-fx-primary, 10%);
+    -fx-padding: 5px 20px 5px 20px;
+}
+
+.settings-tab:selected {
+    -fx-background-color: -fx-secondary;
+}
+
+.settings-tab:selected .tab-label {
+    -fx-text-fill: -fx-primary;
+}
+
+.settings-tab .tab-header-background {
+    -fx-background-color: derive(-fx-primary, -50%);
+}

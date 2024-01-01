@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eu.hansolo.medusa.Gauge?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="645.0" prefWidth="1197.0"
+            style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gmail.dystopianrescuer.ninjavrfx.controllers.modulesControllers.PrincipalController">
+    <children>
+        <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+              minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="600.0">
+            <children>
+                <Label text="Ventana principal" textFill="WHITE">
+                    <font>
+                        <Font name="Gill Sans MT" size="23.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="20.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="15.0" layoutY="57.0"
+                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL"
+                  prefHeight="489.0" prefWidth="992.0" vgap="7.0">
+            <children>
+                <TitledPane animated="false" collapsible="false" prefHeight="230.0" prefWidth="230.0"
+                            stylesheets="@../style.css" text="ADB Server">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="251.0"
+                                    style="-fx-background-color: #05071F;">
+                            <children>
+                                <VBox alignment="TOP_CENTER" layoutX="33.0" layoutY="52.0" prefHeight="148.0"
+                                      prefWidth="154.0">
+                                    <children>
+                                        <Label contentDisplay="RIGHT" text="Conexión   " textFill="#baaeae">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                            <graphic>
+                                                <Circle fx:id="indicadorADB" fill="WHITE" radius="13.0" stroke="BLACK"
+                                                        strokeType="INSIDE"/>
+                                            </graphic>
+                                        </Label>
+                                        <Label contentDisplay="RIGHT" text="Versión     " textFill="#baaeae">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                            <graphic>
+                                                <Label fx:id="versionADB" contentDisplay="RIGHT" text="???"
+                                                       textFill="#baaeae">
+                                                    <font>
+                                                        <Font size="19.0"/>
+                                                    </font>
+                                                </Label>
+                                            </graphic>
+                                            <VBox.margin>
+                                                <Insets top="15.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <Label fx:id="reiniciandoADB" alignment="CENTER" contentDisplay="TOP"
+                                               text="Reiniciando" visible="false">
+                                            <graphic>
+                                                <ProgressIndicator prefHeight="34.0" prefWidth="34.0"/>
+                                            </graphic>
+                                            <VBox.margin>
+                                                <Insets top="15.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" prefHeight="230.0" prefWidth="230.0"
+                            text="Dispositivos conectados">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="198.0"
+                                    style="-fx-background-color: #05071F;">
+                            <children>
+                                <VBox fx:id="dispositivosBox" alignment="CENTER" layoutX="23.0" layoutY="25.0"
+                                      prefHeight="159.0" prefWidth="181.0" spacing="15.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" prefHeight="230.0" prefWidth="230.0" text="Webhook">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="150.0"
+                                    style="-fx-background-color: #05071F;">
+                            <children>
+                                <VBox alignment="CENTER" layoutX="18.0" layoutY="43.0" prefHeight="154.0"
+                                      prefWidth="190.0" spacing="15.0">
+                                    <children>
+                                        <Label contentDisplay="RIGHT" text="Túnel   " textFill="#baaeae">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                            <graphic>
+                                                <Circle fx:id="indicadorTunnel" fill="WHITE" radius="13.0"
+                                                        stroke="BLACK" strokeType="INSIDE"/>
+                                            </graphic>
+                                        </Label>
+                                        <Label contentDisplay="RIGHT" text="Webhook" textFill="#baaeae">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                            <graphic>
+                                                <Circle fx:id="indicadorWebhook" fill="WHITE" radius="13.0"
+                                                        stroke="BLACK" strokeType="INSIDE"/>
+                                            </graphic>
+                                        </Label>
+                                        <Label fx:id="problemaWebhook" contentDisplay="TOP"
+                                               text="Problema en el sistema de pagos con tarjeta, contácte administrador. Cobre directamente en terminal solo con autorización."
+                                               textFill="RED" visible="false" wrapText="true"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <FlowPane.margin>
+                        <Insets/>
+                    </FlowPane.margin>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" prefHeight="230.0" prefWidth="230.0"
+                            text="Pantallas conectadas">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="191.0"
+                                    style="-fx-background-color: #05071F #05071F;">
+                            <children>
+                                <VBox fx:id="pantallasBox" alignment="CENTER" layoutX="21.0" layoutY="24.0"
+                                      prefHeight="159.0" prefWidth="181.0" spacing="15.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <AnchorPane prefHeight="371.0" prefWidth="211.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05071f" height="371.0" layoutX="-1.0"
+                                   layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="216.0"/>
+                        <Label layoutX="43.0" layoutY="39.0" text="Información" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="22.0"/>
+                            </font>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" layoutX="40.0" layoutY="97.0" text="Tus clientes del día"
+                               textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <Gauge fx:id="clientes" animated="true" decimals="0" maxValue="15.0" prefHeight="75.0"
+                                       prefWidth="133.0" skinType="DASHBOARD" title="META DEL DÍA" unit="Clientes">
+                                    <titleColor>
+                                        <Color red="1.0" green="1.0" blue="1.0"/>
+                                    </titleColor>
+                                    <unitColor>
+                                        <Color red="1.0" green="1.0" blue="1.0"/>
+                                    </unitColor>
+                                    <valueColor>
+                                        <Color red="1.0" green="1.0" blue="1.0"/>
+                                    </valueColor>
+                                    <tickMarkColor>
+                                        <Color red="1.0" green="1.0" blue="1.0"/>
+                                    </tickMarkColor>
+                                    <tickLabelColor>
+                                        <Color red="1.0" green="1.0" blue="1.0"/>
+                                    </tickLabelColor>
+                                </Gauge>
+                            </graphic>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" layoutX="70.0" layoutY="232.0" text="Inicio del día"
+                               textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <Label contentDisplay="BOTTOM" text="??:??" textFill="WHITE"/>
+                            </graphic>
+                        </Label>
+                        <Label contentDisplay="BOTTOM" layoutX="56.0" layoutY="300.0" text="Promedio clientes"
+                               textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <Label contentDisplay="BOTTOM" text="?? clientes/hora" textFill="WHITE"/>
+                            </graphic>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </FlowPane>
+    </children>
+</AnchorPane>

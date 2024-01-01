@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="638.0" prefWidth="994.0" style="-fx-background-color: #02030A;"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gmail.dystopianrescuer.ninjavrfx.controllers.modulesControllers.renta.RentaController">
+    <children>
+        <Pane layoutX="107.0" layoutY="133.0" prefHeight="270.0" prefWidth="485.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d0d0d0" height="267.0" stroke="WHITE"
+                           strokeType="INSIDE" width="483.0"/>
+                <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="318.0"
+                       text="No hay dispositivos conectados aún." wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Label>
+                <Label alignment="TOP_CENTER" layoutX="37.0" layoutY="72.0" prefHeight="54.0" prefWidth="361.0"
+                       text="1. - El programa registra dispositivos automaticamente, sólo conecta las gafas mediante USB a la estación y espera la confirmación, después de eso podrás desconectarlas."
+                       wrapText="true"/>
+                <Label alignment="TOP_CENTER" layoutX="37.0" layoutY="134.0" prefHeight="54.0" prefWidth="361.0"
+                       text="2.- Recuerda que para que la conexión sea exitosa, debe haber un pantalla conectada a la estación para poder hacer la transmisión. Esto debe ser por cada dispositivo Meta conectado."
+                       wrapText="true"/>
+                <Label alignment="TOP_CENTER" layoutX="37.0" layoutY="195.0" prefHeight="54.0" prefWidth="361.0"
+                       text="3.- Recuerda revisar también que los servicios de Android Debug Bridge (ADB) estén activos, así como haber realizado todas las configuraciones indicadas por el administrador."
+                       wrapText="true"/>
+            </children>
+        </Pane>
+        <VBox prefHeight="638.0" prefWidth="969.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="600.0">
+                    <children>
+                        <Label prefHeight="32.0" prefWidth="189.0" text="Renta de equipo" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="23.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" top="15.0"/>
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="543.0" prefWidth="1057.0">
+                    <VBox.margin>
+                        <Insets left="20.0" top="20.0"/>
+                    </VBox.margin>
+                    <children>
+                        <TabPane fx:id="devicesTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                 minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="913.0"
+                                 stylesheets="@../tabstyle.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0">
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT"/>
+                            </cursor>
+                        </TabPane>
+                    </children>
+                </FlowPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

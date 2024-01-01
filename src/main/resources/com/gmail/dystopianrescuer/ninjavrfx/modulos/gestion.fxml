@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="638.0" prefWidth="994.0" style="-fx-background-color: #02030A;"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gmail.dystopianrescuer.ninjavrfx.controllers.modulesControllers.GestionController">
+    <children>
+        <VBox prefHeight="638.0" prefWidth="969.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="600.0">
+                    <children>
+                        <Label prefHeight="32.0" prefWidth="305.0" text="Panel de gestión general" textFill="WHITE">
+                            <font>
+                                <Font name="Gill Sans MT" size="23.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" top="15.0"/>
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="543.0" prefWidth="1057.0">
+                    <VBox.margin>
+                        <Insets left="20.0" top="20.0"/>
+                    </VBox.margin>
+                    <children>
+                        <TabPane fx:id="gestionTab" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                 minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="913.0"
+                                 stylesheets="@../tabstyle2.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0">
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT"/>
+                            </cursor>
+                            <tabs>
+                                <Tab text="Ajustes">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+                                                    style="-fx-background-color: #05071F;">
+                                            <children>
+                                                <AnchorPane layoutX="27.0" layoutY="53.0" prefHeight="169.0"
+                                                            prefWidth="361.0" style="-fx-background-color: #ffffff;">
+                                                    <children>
+                                                        <Label layoutX="16.0" layoutY="13.0"
+                                                               text="Digite los precios del día"/>
+                                                        <Button layoutX="289.0" layoutY="93.0" mnemonicParsing="false"
+                                                                onAction="#onButtonAction" text="Actualizar"/>
+                                                        <Label contentDisplay="BOTTOM" layoutX="26.0" layoutY="55.0"
+                                                               text="20 minutos">
+                                                            <graphic>
+                                                                <TextField fx:id="precio20pesos" alignment="CENTER"
+                                                                           prefHeight="25.0" prefWidth="59.0"/>
+                                                            </graphic>
+                                                        </Label>
+                                                        <Label contentDisplay="BOTTOM" layoutX="117.0" layoutY="56.0"
+                                                               text="40 minutos">
+                                                            <graphic>
+                                                                <TextField fx:id="precio40pesos" alignment="CENTER"
+                                                                           prefHeight="25.0" prefWidth="59.0"/>
+                                                            </graphic>
+                                                        </Label>
+                                                        <Label contentDisplay="BOTTOM" layoutX="204.0" layoutY="56.0"
+                                                               text="60 minutos">
+                                                            <graphic>
+                                                                <TextField fx:id="precio60pesos" alignment="CENTER"
+                                                                           prefHeight="25.0" prefWidth="59.0"/>
+                                                            </graphic>
+                                                        </Label>
+                                                        <Label layoutX="15.0" layoutY="80.0" text="\$">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <TextField fx:id="precio20puntos" alignment="CENTER"
+                                                                   layoutX="26.0" layoutY="114.0" prefHeight="25.0"
+                                                                   prefWidth="59.0"/>
+                                                        <TextField fx:id="precio40puntos" alignment="CENTER"
+                                                                   layoutX="117.0" layoutY="115.0" prefHeight="25.0"
+                                                                   prefWidth="59.0"/>
+                                                        <TextField fx:id="precio60puntos" alignment="CENTER"
+                                                                   layoutX="203.0" layoutY="115.0" prefHeight="25.0"
+                                                                   prefWidth="59.0"/>
+                                                        <Label layoutX="86.0" layoutY="119.0" text="N. P">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="194.0" layoutY="81.0" text="\$">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="106.0" layoutY="80.0" text="\$">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="177.0" layoutY="119.0" text="N. P">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="263.0" layoutY="119.0" text="N. P">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="33.0" layoutY="27.0"
+                                                               text="Las modificaciones son registradas">
+                                                            <font>
+                                                                <Font name="System Italic" size="10.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="26.0" layoutY="147.0"
+                                                               text="Si vas a hacer alguna modificacion rellena TODOS los campos">
+                                                            <font>
+                                                                <Font name="System Italic" size="10.0"/>
+                                                            </font>
+                                                        </Label>
+                                                        <Button layoutX="242.0" layoutY="13.0" mnemonicParsing="false"
+                                                                onAction="#onButtonAction"
+                                                                text="Obtener precios actuales">
+                                                            <font>
+                                                                <Font size="9.0"/>
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="437.0" layoutY="53.0" prefHeight="169.0"
+                                                            prefWidth="361.0" style="-fx-background-color: #ffffff;">
+                                                    <children>
+                                                        <Label layoutX="22.0" layoutY="22.0"
+                                                               text="Seleccione la impresora a utilizar"/>
+                                                        <Label fx:id="errorNoImpresoras" layoutX="96.0" layoutY="98.0"
+                                                               prefHeight="17.0" prefWidth="162.0"
+                                                               text="No se encontaron impresoras" textFill="RED"
+                                                               visible="false" wrapText="true"/>
+                                                        <Button layoutX="244.0" layoutY="21.0" mnemonicParsing="false"
+                                                                onAction="#onButtonAction" prefHeight="20.0"
+                                                                prefWidth="101.0" text="Actualizar impresoras">
+                                                            <font>
+                                                                <Font size="9.0"/>
+                                                            </font>
+                                                        </Button>
+                                                        <ChoiceBox fx:id="printerSelection" layoutX="37.0"
+                                                                   layoutY="72.0" onAction="#onCambioImpresora"
+                                                                   prefHeight="25.0" prefWidth="279.0"/>
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Consultas a la base de datos">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="913.0"
+                                                    style="-fx-background-color: #05071F;">
+                                            <children>
+                                                <Label contentDisplay="RIGHT" layoutX="35.0" layoutY="56.0"
+                                                       prefHeight="32.0" prefWidth="419.0" text="Consulta"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TextField fx:id="consulta" prefHeight="26.0"
+                                                                   prefWidth="354.0"/>
+                                                    </graphic>
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                                <TextArea fx:id="resultadoConsulta" editable="false" layoutX="35.0"
+                                                          layoutY="113.0" prefHeight="317.0" prefWidth="807.0">
+                                                    <font>
+                                                        <Font name="Agency FB" size="18.0"/>
+                                                    </font>
+                                                </TextArea>
+                                                <Button layoutX="498.0" layoutY="59.0" mnemonicParsing="false"
+                                                        onAction="#onButtonAction" prefHeight="25.0" prefWidth="67.0"
+                                                        text="Realizar"/>
+                                                <Label layoutX="214.0" layoutY="88.0" text="(Sólo consultas)"
+                                                       textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Italic" size="12.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Registro de empleados">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+                                                    style="-fx-background-color: #05071F #05071F;">
+                                            <children>
+                                                <Label contentDisplay="BOTTOM" layoutX="79.0" layoutY="56.0"
+                                                       prefHeight="71.0" prefWidth="445.0" text="Nombre completo"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TextField fx:id="nombreEmpleado" prefHeight="45.0"
+                                                                   prefWidth="443.0">
+                                                            <font>
+                                                                <Font size="16.0"/>
+                                                            </font>
+                                                        </TextField>
+                                                    </graphic>
+                                                </Label>
+                                                <Button layoutX="677.0" layoutY="225.0" mnemonicParsing="false"
+                                                        onAction="#onButtonAction" prefHeight="39.0" prefWidth="142.0"
+                                                        text="Registrar empleado"/>
+                                                <Label contentDisplay="BOTTOM" layoutX="79.0" layoutY="152.0"
+                                                       prefHeight="71.0" prefWidth="445.0" text="Nombre de usuario"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <TextField fx:id="usuarioEmpleado" prefHeight="45.0"
+                                                                   prefWidth="443.0">
+                                                            <font>
+                                                                <Font size="16.0"/>
+                                                            </font>
+                                                        </TextField>
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="BOTTOM" layoutX="79.0" layoutY="245.0"
+                                                       prefHeight="71.0" prefWidth="445.0" text="Contraseña"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <PasswordField fx:id="passwordEmpleado" prefHeight="45.0"
+                                                                       prefWidth="445.0">
+                                                            <font>
+                                                                <Font size="16.0"/>
+                                                            </font>
+                                                        </PasswordField>
+                                                    </graphic>
+                                                </Label>
+                                                <RadioButton fx:id="isAdmin" layoutX="258.0" layoutY="438.0"
+                                                             mnemonicParsing="false" text="Administrador"
+                                                             textFill="#fffefe"/>
+                                                <Label contentDisplay="BOTTOM" layoutX="79.0" layoutY="339.0"
+                                                       prefHeight="71.0" prefWidth="445.0" text="Contraseña de registro"
+                                                       textFill="WHITE">
+                                                    <graphic>
+                                                        <PasswordField fx:id="passwordRegistro" prefHeight="45.0"
+                                                                       prefWidth="445.0">
+                                                            <font>
+                                                                <Font size="16.0"/>
+                                                            </font>
+                                                        </PasswordField>
+                                                    </graphic>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab disable="true" text="Consolas (aún no activo)">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+                                                    style="-fx-background-color: #05071F;">
+                                            <children>
+                                                <TabPane layoutX="52.0" layoutY="42.0" prefHeight="406.0"
+                                                         prefWidth="822.0" tabClosingPolicy="UNAVAILABLE">
+                                                    <tabs>
+                                                        <Tab text="General">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0"
+                                                                            prefHeight="180.0" prefWidth="200.0"
+                                                                            style="-fx-background-color: #262424;">
+                                                                    <children>
+                                                                        <TextArea fx:id="generalConsole"
+                                                                                  editable="false" layoutX="35.0"
+                                                                                  layoutY="27.0" prefHeight="321.0"
+                                                                                  prefWidth="731.0"/>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="Python Webhook">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0"
+                                                                            prefHeight="180.0" prefWidth="200.0"
+                                                                            style="-fx-background-color: #262424;">
+                                                                    <children>
+                                                                        <TextArea fx:id="webhookConsole"
+                                                                                  editable="false" layoutX="35.0"
+                                                                                  layoutY="27.0" prefHeight="321.0"
+                                                                                  prefWidth="731.0"/>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="Pktriot">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0"
+                                                                            prefHeight="180.0" prefWidth="200.0"
+                                                                            style="-fx-background-color: #262424;">
+                                                                    <children>
+                                                                        <TextArea fx:id="tunnelConsole" editable="false"
+                                                                                  layoutX="35.0" layoutY="27.0"
+                                                                                  prefHeight="321.0" prefWidth="731.0"/>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                    </tabs>
+                                                </TabPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </FlowPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
